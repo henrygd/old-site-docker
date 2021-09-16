@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static/img/favicon.png">
+    <title>henrygd</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato%7cPlayball' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+    <link rel="stylesheet" href="static/css/henrygd.css">
+    <!--[if lt IE 9]>
+        <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="container" class="container">
+
+    <header class="intro">
+        <div class="intro_image" id="introimage"></div>
+        <div class="intro_content">
+            <h1 class="intro_title">Henry Dollman</h1>
+            <div class="intro_subtitle">
+                
+                <button class="trigger" onclick="toggleContent()">
+                    <svg viewBox="0 0 60 60" preserveAspectRatio="none">
+                       <g class="icon icon-grid">
+                           <rect x="32.5" y="5.5" width="22" height="22"/>
+                           <rect x="4.5" y="5.5" width="22" height="22"/>
+                           <rect x="32.5" y="33.5" width="22" height="22"/>
+                           <rect x="4.5" y="33.5" width="22" height="22"/>
+                       </g>
+                       <g class="icon icon-cross">
+                           <line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
+                           <line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
+                       </g>
+                    </svg>
+                    <span>View content</span>
+                </button>
+
+                <button class="contact-link" onclick="opencontactform()">
+                    <svg viewBox="0 0 60 60" preserveAspectRatio="none">
+                      <rect height="60" width="60" y="0" x="0"/>
+                      <line y2="30" x2="30" y1="0" x1="0"/>
+                      <line y2="0" x2="60" y1="30" x1="30"/>
+                    </svg>
+                    <span>Contact form</span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="items-wrap">
+        <a href="javascript:void(0);" class="item" onclick="projectTransition('stripeserver')">
+            <img src="static/img/screen_stripeserver.jpg" alt="project1" class="item_image">
+            <h2 class="item_title">Free Stripe Checkout Server</h2>
+        </a>
+        <a href="javascript:void(0);" class="item" onclick="projectTransition('allseas')">
+            <img src="static/img/screen_allseas.jpg" alt="project2" class="item_image">
+            <h2 class="item_title">All Seas Cruises Website</h2>
+        </a>
+        <a href="javascript:void(0);" class="item" onclick="projectTransition('colorFlow')">
+            <img src="static/img/screen_colorflow.png" alt="ColorFlow" class="item_image">
+            <h2 class="item_title">ColorFlow</h2>
+        </a>
+        <a href="javascript:void(0);" class="item" onclick="projectTransition('websitebuilder')">
+            <img src="https://res.cloudinary.com/henrygd/image/upload/v1424047268/screen_websitebuilder.jpg" alt="project3" class="item_image">
+            <h2 class="item_title">Nonprofit Website Builder</h2>
+        </a>
+        <a href="javascript:void(0);" class="item" onclick="projectTransition('clientdb')">
+            <img src="static/img/screen_clientdb.png" alt="project3" class="item_image">
+            <h2 class="item_title">All Seas Cruises Client Database</h2>
+        </a>
+    </div>
+
+    <div class="extra">
+         <p>Photo Credit<br>
+         Jeff Jackowski | <a href="https://www.flickr.com/photos/jjackowski/15659707052">Late night coding</a><br>
+         <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons BY-NC-SA</a></p>
+     </div>
+
+     <div id="item-detail" style="display:none">
+
+     <button class="icon-cross-thick" onclick="closedetail()">
+             <svg viewBox="0 0 60 60" preserveAspectRatio="none">
+                <g>
+                    <line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
+                    <line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
+                </g>
+             </svg>
+         </button>
+
+         <div class="detail-wrap"></div>
+
+     </div>
+
+     <div id="contact-form" class="hideoverflow" style="display:none">
+         <button class="icon-cross-thick" onclick="closecontactform()">
+             <svg viewBox="0 0 60 60" preserveAspectRatio="none">
+                <g>
+                    <line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
+                    <line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
+                </g>
+             </svg>
+         </button>
+
+         <div id="form">
+             <h1>Contact Me</h1>
+               <div class="flex-container">
+                 <input id="name" class="flex-field" type="text" placeholder="Name">
+                 <input id="email" class="flex-field" type="text" placeholder="Email address">
+               </div>
+               <div class="flex-container">
+                 <input id="subject" class="flex-field" type="text" placeholder="Subject">
+               </div>
+               <div class="flex-container">
+                 <textarea id="message" class="flex-field" placeholder="Message"></textarea>
+               </div>
+               <div class="flex-container">
+                   <p id="errors"></p>
+                   <div class="formbtn">
+                   <button class="btn" id="formbtn" onclick="validateform()">Submit</button>
+                   <span id="formspan"></span>
+                   </div>
+               </div>
+           </div>
+
+           <div id="result" style="display:none">
+               <p id="data"></p>
+           </div>
+     </div>
+</div>
+
+    <!-- individual project info -->
+    <div id="projectdetail">
+        <div id="colorFlow" class="project-detail">
+            <div class="item-text">
+                <h1>ColorFlow</h1>
+                <p>jQuery plugin, under 1kB in size, adds super-smooth CSS3 background and/or text color transitions to any element.</p>
+                <p>HTML | CSS | jQuery</p>
+                <a href="/colorflow" class="btn site-link">Visit Site</a>
+                <a href="https://github.com/henrygd/ColorFlow" class="btn github"><img src="static/img/githublogo.svg" alt="github"></a>
+            </div>
+            <div class='item-image'>
+                <a href="/colorflow"><img class="detail-image" src="static/img/screen_colorflow.png" alt="Image of this project"></a>
+            </div>
+        </div>
+
+        <div id="stripeserver" class="project-detail">
+            <div class="item-text">
+                <h1>Stripe Server</h1>
+                <p>Allows static websites to complete Stripe Checkout transactions without a server and without forcing users to leave, No percentage fees or other costs, ever.</p>
+                <p>HTML | CSS | Python | jQuery | SQL</p>
+                <a href="/stripeserver" class="btn site-link">Visit Site</a>
+                <a href="https://github.com/henrygd/Free-Stripe-Checkout-Server" class="btn github"><img src="static/img/githublogo.svg" alt="github"></a>
+            </div>
+            <div class='item-image'>
+                <a href="/stripeserver"><img class="detail-image" src="static/img/screen_stripeserver.jpg" alt="Image of this project"></a>
+            </div>
+        </div>
+
+        <div id="clientdb" class="project-detail">
+            <div class="item-text">
+                <h1>Client Database</h1>
+                <p>Secure web tool that makes it easy to add, remove, or search for client information. Also allows the user to download a backup of the database or export it as a spreadsheet.</p>
+                <p style="text-align:justify">Note: Site link is to an example app hosted at Heroku. It may take a second to 'wake up,' but you may alter the database in any way. Username / password is "test".</p>
+                <p>HTML | CSS  | Python | jQuery | SQL</p>
+                <a href="https://clientdb.herokuapp.com" class="btn site-link">Visit Site</a>
+                <a href="https://github.com/henrygd/All-Seas-Client-Database-Application" class="btn github"><img src="static/img/githublogo.svg" alt="github"></a>
+            </div>
+            <div class='item-image'>
+                <a href="https://clientdb.herokuapp.com"><img class="detail-image" src="static/img/screen_clientdb.png" alt="Image of this project"></a>
+            </div>
+        </div>
+
+        <div id="websitebuilder" class="project-detail">
+            <div class="item-text">
+                <h1>Website Builder</h1>
+                <p>Make your own website with donation functionality and optional event calendar and map. Quick, easy, and free. Primarily intended for smaller organizations that do some good. Includes step-by-step hosting instructions.</p>
+                <p>HTML | CSS | Bootstrap | Python | jQuery | SQL</p>
+                <a href="/makeawebsite" class="btn site-link">Visit Site</a>
+                <a href="https://github.com/henrygd/Nonprofit-Website-Builder" class="btn github"><img src="static/img/githublogo.svg" alt="github"></a>
+            </div>
+            <div class='item-image'>
+                <a href="/makeawebsite"><img class="detail-image" src="https://res.cloudinary.com/henrygd/image/upload/v1424047268/screen_websitebuilder.jpg" alt="Image of this project"></a>
+            </div>
+        </div>
+
+        <div id="allseas" class="project-detail">
+            <div class="item-text">
+                <h1>All Seas Website</h1>
+                <p>Website for an awesome local travel agency, All Seas Cruises &amp; Travel. You should call and book a cruise now. Seriously.</p>
+                <p>HTML | CSS | Bootstrap | jQuery</p>
+                <a href="https://allseascruises.com" class="btn site-link">Visit Site</a>
+                <a href="https://github.com/allseascruises/allseascruises.github.io" class="btn github"><img src="static/img/githublogo.svg" alt="github"></a>
+            </div>
+            <div class='item-image'>
+                <a href="https://allseascruises.com"><img class="detail-image" src="static/img/screen_allseas.jpg" alt="Image of this project"></a>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="static/js/custom.backstretch.min.js"></script>
+
+<script>$("#introimage").backstretch("static/img/homebackground.jpg")</script>
+
+<script>
+    var container = $('#container')
+    var trigger = $('.trigger')
+    function toggleContent(){
+        if (container.hasClass('container-open')){
+            container.removeClass('container-open')
+            trigger.removeClass('trigger-active')
+            window.addEventListener('scroll',noscroll)
+        } 
+        else{
+            container.addClass('container-open')
+            trigger.addClass('trigger-active')
+            window.removeEventListener('scroll',noscroll)
+        }
+    }
+
+    function noscroll(){
+        window.scrollTo(0,0)
+    }
+
+    document .body.scrollTop = document.documentElement.scrollTop = 0
+
+    window.addEventListener('scroll',noscroll)
+</script>
+
+<script>
+    function opencontactform(){
+        $('#contact-form').fadeIn(300)
+        setTimeout(function(){
+            $('body').addClass('hideoverflow')
+            $('#contact-form').removeClass('hideoverflow')
+        },301)
+    }
+    function closecontactform(){
+        $('body').removeClass('hideoverflow')
+        $('#contact-form').addClass('hideoverflow').fadeOut(300)
+    }
+</script>
+
+<script>
+    function validateform(){
+        var errors = []
+            , name = $('#name')
+            , email = $('#email')
+            , subject = $('#subject')
+            , body = $('#message')
+        if (name.val() == "" || email.val() == "" || subject.val() == "" || body.val() == ""){
+            errors.push('Please fill in all fields.')
+            if (name.val() == "")
+                name.addClass('inputerror')
+            if (email.val() == "")
+                email.addClass('inputerror')
+            if (subject.val() == "")
+                subject.addClass('inputerror')
+            if (body.val() == "")
+                body.addClass('inputerror')
+        }
+        if (email.val().match(/^[\w\.]+@\w+\.[\w\.]+$/) == null){
+            errors.push('Your email does not match the required format.')
+            email.addClass('inputerror')
+        }
+        if (body.val().length < 10){
+            errors.push('Message must be at least ten characters.')
+            body.addClass('inputerror')
+        }
+        else if (body.val().length > 10000){
+            errors.push('Message max length (10,000 characters) exceeded. Email directly: hank@henrygd.me')
+            body.addClass('inputerror')
+        }
+        if (errors.length > 0)
+            $('#errors').html(errors.join('<br>')).fadeIn(300)
+        else
+            emailme()
+    };
+
+    function emailme(){
+        var body = $('#message')
+            , name = $('#name')
+            , firstName = name.val()
+        $.post ("/mailme", {
+                name: name.val(),
+                email: $('#email').val(),
+                subject: $('#subject').val(),
+                body: body.val(),
+            }, function(data) {
+                if (firstName.indexOf(' ') >= 0)
+                    firstName = name.val().split(' ').slice(0, -1).join(' ');
+                try{
+                    if (data.result[0].status == "sent"){
+                        $('#data').text('Thank you, ' + firstName + '! Your message has been sent.')
+                    }
+                    else{
+                        nomail(firstName)
+                    }
+                }
+                catch(e){
+                    nomail(firstName)
+                }
+                setTimeout(function(){
+                    $('#form').fadeOut(250)
+                    setTimeout(function(){
+                        $('#result').fadeIn(250)
+                    }, 270)
+                }, 200)
+                });
+    };
+    function nomail(firstName){
+        $('#data').text('Sorry, ' + firstName + '! The email server encountered an error. Please email directly at hank@henrygd.me')
+        $('#result').append('<textarea>' + $('#message').val() + '</textarea>')
+    }
+</script>
+
+<script>
+    $( "input, textarea" ).focus(function() {
+      if ($(this).hasClass('inputerror'))
+        $(this).removeClass('inputerror')
+    });
+</script>
+
+<script>
+    function projectTransition(project){
+        var html = document.getElementById(project).innerHTML
+        $('.detail-wrap').html(html)
+        $('#container').addClass('fadeout')
+        setTimeout(function(){
+            $('#item-detail').fadeIn(300)
+        }, 200)
+    }
+    function closedetail(){
+        $('#item-detail').fadeOut(300)
+        setTimeout(function(){
+        $('#container').removeClass('fadeout')
+    }, 300)
+    }
+</script>
+
+<script>
+    $(window).on("backstretch.after", function(){
+        $('.intro').addClass('introeffect')
+    });
+    $('img').error(function() {
+        $('.intro').addClass('introeffect')
+    });
+</script>
+
+<script>
+    $(document).bind("ajaxSend", function(){
+      $('#formspan').addClass('animatebtn')
+      $('#formbtn').addClass('nobackground').prop("disabled",true)
+    }).bind("ajaxComplete", function(){
+      $('#formspan').removeClass('animatebtn').addClass('animationdone')
+    });
+</script>
+
+</body>
+</html>

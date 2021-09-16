@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+   oldsite:
+     container_name: oldsite
+     image: ghcr.io/henrygd/old-site-docker:latest
+     restart: unless-stopped
+     ports:
+       - '5000:5000'

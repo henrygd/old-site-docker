@@ -1,0 +1,54 @@
+body,html{padding:1em 0;margin:0;background-color:#544B3F;font-family:"Open Sans"!important}
+.note{display:block;position:absolute;top:10px;left:10px;font-size:.6em}
+.new{background-color:#81C784;border:1px solid #757575;padding:1px;border-radius:4px}
+header{width:100%;vertical-align:middle;text-align:center;margin:20px 0 10px}
+.header-content{display:inline-block}
+.header-text{margin-top:.5em;margin-left:1em}
+header p{font-size:1.2em;text-align:center;margin:0;color:#212121}
+.first-name{font-size:1.05em}
+.subtitle{padding-top:.3em;font-size:.7em;font-weight:400;color:#424242}
+.paper{margin:0 auto;background-color:#E8E5C9;width:90%;max-width:900px;padding:.5em 0;box-shadow:rgba(0, 0, 0, 0.3) 0px 0px 20px}
+.content-wrapper{padding-right:7.25%}
+.content{display:table;width:100%;padding-top:1.5em}
+.content:last-child{margin-bottom:2em}
+body > div > article > div > section:last-child{padding-bottom:1.5em}
+.row{display:table-row}
+.row div{display:table-cell}
+.content-cat{font-variant:small-caps;font-weight:300;letter-spacing:1px;color:#212121;font-size:.975em;text-align:center;vertical-align:middle;padding-left:6.66%;width:30%}
+.content-cat p{font-size:.55em;font-weight:600;margin-bottom:0}
+.content-text{border-left:1px solid #D4D0A7;transition:border .66s ease-in}
+.big-text{vertical-align:top}
+.content-text ul{padding:0;margin:0;margin-top:.15em;width:85%;margin-left:1.5em}
+.content-text ul:last-child{margin-bottom:.5em}
+.content-text ul li{font-size:.7em;display:inline-block}
+.content-text ul li:first-child{width:35%;color:#424242;font-weight:600}
+a{text-decoration:none;color:#0277bd;transition:all 0.3s}
+a:hover{color:#4fc3f7}
+a:active{color:#0171B4}
+.work-listing p{font-size:.7em;color:#424242;margin-left:2em;margin-top:.45em;margin-bottom:.45em}
+div.content-text.work-listing.education-listing > p:nth-child(2){margin-top:.25em}
+.work-listing .highlight{font-size:.7em;font-weight:400;color:#424242;margin-left:3.25em;padding-left:.5em;border-left:1px solid #D4D0A7}
+.education-listing > .heading{font-weight:600;margin-top:.75em;margin-left:2em}
+.education-listing > .highlight{margin-left:3.25em}
+.highlight{transition:border .33s ease-in}
+.profiles-listing ul li,.profiles-listing ul li:first-child{width:32%;font-weight:400}
+.work-content,.education-content{padding-top:.75em}
+section.content.education-content > div > div.content-cat{vertical-align:top}
+div.content-text.skills-listing > p{font-size:.7em;font-weight:400;margin-left:2em;margin-top:.45em;margin-bottom:.45em}
+div.content-text.skills-listing > p >{color:#212121}
+
+@media(min-width:1920px) {
+body{font-size:18px}
+}
+
+@media(max-width:500px) {
+body,html{padding:0.3em 0}
+.content-wrapper {padding-right:2%}
+.content{padding-top:1em}
+.paper{width:95%;padding:0}
+.content-cat{padding-left:0;letter-spacing:initial;font-size:.875em;width:27%}
+.content-text ul{width: 100%;margin-left:1em}
+.work-listing p,.education-listing > .heading{margin-left:1em}
+.education-listing > .highlight {margin-left: 1.5em}
+.item-text .btn{width:100%;margin-bottom:5px}
+}

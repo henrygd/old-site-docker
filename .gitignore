@@ -1,0 +1,8 @@
+venv
+env
+certificates
+static/index.html
+templates/test.html
+*.pyc
+*~
+*.db
